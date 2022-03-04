@@ -81,5 +81,5 @@ def put_numbers_on_blank(grid_txt, result):
     for y in range(len(result)):
         for x in range(len(result[y])):
             if grid_txt[y][x] == '0':
-                cv.putText(blank, "{:d}".format(result[y][x]), ((x) * cell + margin + 3, (y + 1) * cell - margin - 3), cv.FONT_HERSHEY_SIMPLEX, 0.9, (255, 0, 0), 1)
+                cv.putText(blank, "{:d}".format(result[y][x]), ((x) * cell + margin + 3, (y + 1) * cell - margin - 3), cv.FONT_HERSHEY_DUPLEX, 0.9, (255, 0, 0), 1)
     return blank

@@ -9,8 +9,8 @@ import cv2 as cv # din cauza ca eu nu importez totul din utils nu se vor importa
 import utils # from utils import * # asta pentru vizibilitate si distinctie mai buna
 
 
-classifier = utils.init_model("digit_model.h5")
-path = os.path.join(sys.path[0], "images/app.jpg")###change it to console path
+classifier = utils.init_model("Sudoku-Solver-AI-master/digit_model.h5")
+path = os.path.join(sys.path[0], "images/sudoku-hard.png")###change it to console path
 ###de adaugat daca nu se gaseste modelul error handling
 ### si daca nu se incarca modelul
 
@@ -38,7 +38,8 @@ if contour_grid is not None:
 
     grid_txt = utils.extract_sudoku_by_line(grid, classifier)
 
-    print(grid_txt)
+    print("\nPredicted rows from image: ", grid_txt)
+    print()
     result = su.sudoku(grid_txt)
 
 print("\nSolution:\n", result)

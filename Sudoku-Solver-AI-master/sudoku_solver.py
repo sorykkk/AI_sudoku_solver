@@ -1,7 +1,7 @@
 N = 9 #numarul de patrate pe un rand
 P = print
 
-def formatted_grid(g):
+def format_grid(g):
     for n, l in enumerate(g):
         for m, c in enumerate(l):
             P(str(c).replace("0", "."), end="")
@@ -114,8 +114,8 @@ def solve_sudoku(grid, row, col):
 
 
 def sudoku(grid_line):
-
-    formatted_grid(grid_line)
+    print("Visualized initial sudoku:")
+    format_grid(grid_line)
     #convertim grid in format of matrix
     grid = [None]*len(grid_line)#grid = grid_line.copy()
     for i, v in enumerate(grid_line):
@@ -126,12 +126,13 @@ def sudoku(grid_line):
         return
 
     if(solve_sudoku(grid, 0, 0)):
+        #doar stilistica/informativ
+        grid_form = grid_line.copy()
         #convertim din grid inapoi in grid_line
         for i, v in enumerate(grid):
-            grid_line[i] = "".join([str(c) for c in v])
-        
-        P("\nVisualized solution:\n")
-        formatted_grid(grid_line)
+            grid_form[i] = "".join([str(c) for c in v])
+        P("\nVisualized solution:")
+        format_grid(grid_form)
 
         return (grid)
     else:
