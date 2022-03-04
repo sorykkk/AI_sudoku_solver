@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\soryn\Desktop\sud_rep\sudoku\sudoku\Image.h(20,37): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\soryn\Desktop\sud_rep\sudoku\sudoku\Image.h(23,37): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  sudoku.vcxproj -> C:\Users\soryn\Desktop\sud_rep\sudoku\x64\Debug\sudoku.exe

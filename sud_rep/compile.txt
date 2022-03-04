@@ -1,0 +1,2 @@
+sudoku.exe -s "C:\Users\soryn\Desktop\sud_rep\sudoku_solver\images\sudoku0.png" "C:\Users\soryn\Desktop\sud_rep\sudoku\sudoku\OCR-data.yaml"
+sudoku.exe -tl "C:\Users\soryn\Desktop\sud_rep\sudoku\x64\Debug" "C:\Users\soryn\Desktop\sud_rep\sudoku_solver\images\sudoku0.png" "C:\Users\soryn\Desktop\sud_rep\sudoku_solver\images\sudoku1.jpg" "C:\Users\soryn\Desktop\sud_rep\sudoku_solver\images\sudoku2.png" "C:\Users\soryn\Desktop\sud_rep\sudoku_solver\images\sudoku3.png"

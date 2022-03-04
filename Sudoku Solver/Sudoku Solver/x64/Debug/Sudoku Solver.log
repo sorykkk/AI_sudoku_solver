@@ -1,0 +1,122 @@
+﻿  Image.cpp
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\OCR.h(17,35): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.h(12,37): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.h(15,37): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.cpp(54,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.cpp(75,40): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+          and
+          [
+              _Tp=float
+          ]
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.cpp(75,28): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+          and
+          [
+              _Tp=float
+          ]
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.cpp(76,57): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+          and
+          [
+              _Tp=float
+          ]
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.cpp(76,31): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+          and
+          [
+              _Tp=float
+          ]
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.cpp(77,60): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+          and
+          [
+              _Tp=float
+          ]
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.cpp(77,31): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+          and
+          [
+              _Tp=float
+          ]
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.cpp(78,43): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+          and
+          [
+              _Tp=float
+          ]
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.cpp(78,28): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+          and
+          [
+              _Tp=float
+          ]
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.cpp(82,32): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+          and
+          [
+              _Tp=float
+          ]
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.cpp(83,51): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+          and
+          [
+              _Tp=float
+          ]
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.cpp(83,32): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+          and
+          [
+              _Tp=float
+          ]
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.cpp(84,35): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+          and
+          [
+              _Tp=float
+          ]
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.cpp(110,32): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.cpp(111,32): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.cpp(112,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  OCR.cpp
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\OCR.h(17,35): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.h(12,37): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\soryn\Desktop\Sudoku Solver\Sudoku Solver\Image.h(15,37): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  Sudoku Solver.vcxproj -> C:\Users\soryn\Desktop\Sudoku Solver\x64\Debug\Sudoku Solver.exe
