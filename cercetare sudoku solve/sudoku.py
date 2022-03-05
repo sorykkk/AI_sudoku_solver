@@ -55,8 +55,6 @@ contours, hierarchy = cv.findContours(thresh, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_
 # si conturul ce apartine acestei arii
 max_area, contour_grid = utils.find_biggest_contour(contours)
 
-
-
 # verificam daca a fost gasit conturul
 if (contour_grid is not None):
     # desenarea conturulului pe imaginea originala
@@ -122,9 +120,9 @@ if (contour_grid is not None):
         cv.imshow("frame", frame)
 
 else: # daca nu s-a gasit conturul
-        #frame = cv2.resize(frame, (650, 800))
-        # se afiseaza doar imaginea originala fara contur
-        cv.imshow("frame", frame)
+    #frame = cv2.resize(frame, (650, 800))
+    # se afiseaza doar imaginea originala fara contur
+    cv.imshow("frame", frame)
 
 # afisarea timpului de compilare totala
 #print(f"--- {(time.time()-start_time)} seconds ---")
