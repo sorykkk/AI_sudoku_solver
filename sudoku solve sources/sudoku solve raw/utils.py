@@ -1,4 +1,3 @@
-#importarea librariilor
 import cv2 as cv
 from keras.models import load_model
 import numpy as np
