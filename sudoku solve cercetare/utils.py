@@ -53,7 +53,7 @@ def reorder_points(contour):
     # ierarhizarea contururilor vertical
     points = np.vstack(contour).squeeze()# se sterg toate array-urile de lungimea 1
     # sortarea punctelor din contur dupa al doilea parametru din array
-    # itemgetter(1) extrage din obiect indexul a doilea element
+    # itemgetter(1) extrage din obiect indexul a lui al doilea element
     points = sorted(points, key=operator.itemgetter(1))
     # reanjarea celor 4 coordonate de la stanga la dreapta, de jos si sus
     # se verifica sortarea x-urilor, deoarece a fost sortat dupa y
@@ -73,11 +73,11 @@ def reorder_points(contour):
     return pts1, pts2
 
 # extragerea cifrelor din imagine, cate o linie
-def extract_sudoku_by_line(grid, model):
+def extract_sudoku(grid, model):
     grid_txt = []
     # bulca pentru a extrage celulele din grila pentru prezicere
     for y in range(9):
-        line = ""
+        line = []
         for x in range(9):
             # setarile modelului antrenat, extragerea imaginii 
             # cu offset fara a se vedea marginile grilei
@@ -85,10 +85,10 @@ def extract_sudoku_by_line(grid, model):
             y2max = (y + 1) * cell - margin
             x2min = x * cell + margin
             x2max = (x + 1) * cell - margin
-            # salvarea imaginilor extrase pentru a putea fi vizualizate
-            cv.imwrite("mat" + str(y) + str(x) + ".png", grid[y2min:y2max, x2min:x2max])
             # extragerea imaginii 28x28 cu toate offseturile din model
             img = grid[y2min:y2max, x2min:x2max]
+            # salvarea imaginilor extrase pentru a putea fi vizualizate
+            cv.imwrite("mat" + str(y) + str(x) + ".png", grid[y2min:y2max, x2min:x2max])
             # schimbarea formei array-ului pentru a putea fi prezis cifra
             # in rastrul de 28x28 folosit la prezicere de catre
             x = img.reshape(1, 28, 28, 1)
@@ -107,9 +107,9 @@ def extract_sudoku_by_line(grid, model):
                     # extragerea indexului cu cea mai mare valoare (probabilitate)
                     class_index = np.argmax(prediction, axis=-1)
                     # type casting in string
-                    line += str(class_index[0]) # str(int(class_index[0]))
+                    line.append(class_index[0]) # str(int(class_index[0]))
             else:# daca nu e prezent numarul atunci se atribuie 0
-                line += '0'
+                line.append(0)
         # la lista de stringuri se ataseaza linia compusa
         grid_txt.append(line)
     
@@ -122,7 +122,7 @@ def put_numbers_on_blank(grid_txt, result):
     for y in range(len(result)):
         for x in range(len(result[y])):
             # se pune raspunsul doar daca in grila originala acolo era 0
-            if(grid_txt[y][x] == '0'):
+            if(grid_txt[y][x] == 0):
                 cv.putText(blank, "{:d}".format(result[y][x]), ((x) * cell + margin + 3, 
                             (y + 1) * cell - margin - 3), cv.FONT_HERSHEY_DUPLEX, 0.9, (255, 0, 0), 1)
     return blank

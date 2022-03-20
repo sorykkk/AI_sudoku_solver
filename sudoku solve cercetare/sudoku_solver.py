@@ -27,6 +27,16 @@ def verify_init(grid):
                     if(i != k and grid[k][j] and grid[i][j] == grid[k][j]):
                         #print(f"S{grid[i][j]} {grid[k][j]} {i, j} {k, j}")
                         return False
+                # verific daca un numar selectat
+                # nu este prezent in patratul 3x3
+                start_row = i - i % 3
+                start_col = j - j % 3
+                for k in range(3):
+                    for l in range(3):
+                        if(grid[k + start_row][l + start_col] == grid[i][j] and 
+                            (k + start_row) != i and (l + start_col) != j):
+                            print(grid[i][j])
+                            return False
     return True
 
 # verifica daca va fi corect de adaugat num
@@ -117,26 +127,21 @@ def solve_sudoku(grid, row, col):
     return False
 
 
-def sudoku(grid_line):
+def sudoku(grid_init):
+    # deep copy a matricei 2D pentru ca ea sa ramana in forma initiala
+    grid = [row[:] for row in grid_init]
     print("Visualized initial sudoku:")
-    format_grid(grid_line)
-    # convertim grid in format of matrix
-    grid = [None]*len(grid_line)#grid = grid_line.copy()
-    for i, v in enumerate(grid_line):
-        grid[i] = [int(c) for c in v]
+    format_grid(grid)
 
+    # verific daca este introdus corect sudoku
     if(not verify_init(grid)):
         P("\nIncorrect initial matrix(sudoku)\n")
         return
 
     if(solve_sudoku(grid, 0, 0)):
-        # doar stilistica/informativ
-        grid_form = grid_line.copy()
-        # convertim din grid inapoi in grid_line
-        for i, v in enumerate(grid):
-            grid_form[i] = "".join([str(c) for c in v])
+        # vizualizam matricea rezolvata
         P("\nVisualized solution:")
-        format_grid(grid_form)
+        format_grid(grid)
 
         return (grid)
     else:

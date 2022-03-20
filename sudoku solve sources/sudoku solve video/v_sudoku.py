@@ -14,7 +14,6 @@ flag = 0
 while True:
 
     ret, frame = cap.read()
-    frame = cv.flip(frame, 0)
 
     thresh = utils.preprocess(frame)
 

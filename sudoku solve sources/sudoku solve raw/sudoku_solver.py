@@ -23,6 +23,15 @@ def verify_init(grid):
                     if(i != k and grid[k][j] and grid[i][j] == grid[k][j]):
                         #print(f"S{grid[i][j]} {grid[k][j]} {i, j} {k, j}")
                         return False
+                
+                start_row = i - i % 3
+                start_col = j - j % 3
+                for k in range(3):
+                    for l in range(3):
+                        if(grid[k + start_row][l + start_col] == grid[i][j] and 
+                            (k + start_row) != i and (l + start_col) != j):
+                            print(grid[i][j])
+                            return False
     return True
 
 def is_safe(grid, row, col, num):
@@ -65,24 +74,18 @@ def solve_sudoku(grid, row, col):
     return False
 
 
-def sudoku(grid_line):
+def sudoku(grid_init):
+    grid = [row[:] for row in grid_init]# deep copy of 2D array
     print("Visualized initial sudoku:")
-    format_grid(grid_line)
-
-    grid = [None]*len(grid_line)#grid = grid_line.copy()
-    for i, v in enumerate(grid_line):
-        grid[i] = [int(c) for c in v]
+    format_grid(grid)
 
     if(not verify_init(grid)):
         P("\nIncorrect initial matrix(sudoku)\n")
         return
 
     if(solve_sudoku(grid, 0, 0)):
-        grid_form = grid_line.copy()
-        for i, v in enumerate(grid):
-            grid_form[i] = "".join([str(c) for c in v])
         P("\nVisualized solution:")
-        format_grid(grid_form)
+        format_grid(grid)
 
         return (grid)
     else:

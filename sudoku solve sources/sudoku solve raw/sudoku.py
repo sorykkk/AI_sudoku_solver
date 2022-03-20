@@ -49,7 +49,7 @@ if (contour_grid is not None):
     grid = cv.adaptiveThreshold(grid, 255, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY_INV, 7, 3)#adaptive_thresh_gaussian_c folosit pentru cel mai bun thresh//detaliile se disting cel mai bine
     cv.imshow("grid", grid)
 
-    grid_txt = utils.extract_sudoku_by_line(grid, classifier)
+    grid_txt = utils.extract_sudoku(grid, classifier)
 
     print("\nPredicted rows from image:\n", grid_txt)
     print()
@@ -74,6 +74,15 @@ if (contour_grid is not None):
         dst = cv.add(img1_bg, img2_fg)
         #dst = cv.resize(dst, (650, 800))
         cv.imshow("frame", dst)
+        
+        if(args.p is not None):
+            last = args.p.split('\\')
+            name = last[-1].split('.')
+
+        else:
+            name = leftovers[0].split('.')
+        
+        cv.imwrite(name[0]+"-solved."+name[1], dst)
 
     else:
         #frame = cv2.resize(frame, (650, 800))
@@ -82,6 +91,7 @@ if (contour_grid is not None):
 else:
     #frame = cv2.resize(frame, (650, 800))
     cv.imshow("frame", frame)
+    print('### Contour is not found ###')
 
 #print(f"--- {(time.time()-start_time)} seconds ---")
 cv.waitKey(0)

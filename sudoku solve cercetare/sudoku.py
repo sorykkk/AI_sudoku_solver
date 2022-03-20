@@ -73,7 +73,8 @@ if (contour_grid is not None):
     grid = cv.adaptiveThreshold(grid, 255, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY_INV, 7, 3)#adaptive_thresh_gaussian_c folosit pentru cel mai bun thresh//detaliile se disting cel mai bine
     cv.imshow("grid", grid)
     # extragerea fiecarui rand a sudoku
-    grid_txt = utils.extract_sudoku_by_line(grid, classifier)
+    # extragem in formatul liniei cu text pentru comoditatea in vizualizare
+    grid_txt = utils.extract_sudoku(grid, classifier)
 
     # afisarea in consola randurilor extrase
     print("\nPredicted rows from image:\n", grid_txt)
@@ -114,6 +115,17 @@ if (contour_grid is not None):
         #dst = cv.resize(dst, (650, 800))
         cv.imshow("frame", dst)
 
+        # salvez imaginea
+        if(args.p is not None): # verific daca este indicat drumul spre imagine
+            last = args.p.split('\\')   # selectez toate numele folderelor si fisierului
+            name = last[-1].split('.')  # selectez din lista precedenta ultimul fisier
+                                        # si il impart in numele fisierului si tipul lui
+
+        else:
+            name = leftovers[0].split('.') # daca este indicat doar numele, selectez doar numele si tipul fisierului
+        # salvez imaginea in foldeului unde este fisierul cu programa
+        cv.imwrite(name[0]+"-solved."+name[1], dst)
+
     else: # daca nu se poate rezolva
         #frame = cv2.resize(frame, (650, 800))
         # se afiseaza doar imaginea cu conturul evidentiat
@@ -123,6 +135,7 @@ else: # daca nu s-a gasit conturul
     #frame = cv2.resize(frame, (650, 800))
     # se afiseaza doar imaginea originala fara contur
     cv.imshow("frame", frame)
+    print('### Contour is not found ###')
 
 # afisarea timpului de compilare totala
 #print(f"--- {(time.time()-start_time)} seconds ---")
